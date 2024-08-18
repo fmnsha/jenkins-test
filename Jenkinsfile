@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('build image') {
             steps {
-                docker build -t jenkines-test .
-                docker run -d  --name jenkines-test jenkines-test
+                sh "docker build -t jenkines-test ."
+                sh "docker run -d  --name jenkines-test jenkines-test"
             }
         }
     }
