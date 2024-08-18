@@ -5,7 +5,7 @@ pipeline {
         stage('build image') {
             steps {
                 script{
-                    sh "docker build -t jenkines-testimage ."
+                    sh "go run main.go"
                     //sh "docker run -d  --name jenkines-test jenkines-test"
                 }
                 
