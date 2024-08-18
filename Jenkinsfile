@@ -3,10 +3,12 @@ pipeline {
 
     stages {
         stage('build image') {
-            steps {
-                sh "docker build -t jenkines-test ."
-                sh "docker run -d  --name jenkines-test jenkines-test"
-            }
+           script{
+                    echo "starting docker build"
+                    sh "docker build build -t golang-test ."
+                    echo "docker built successfully"
+               }
+           }
         }
     }
 }
