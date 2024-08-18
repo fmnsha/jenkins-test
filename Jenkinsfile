@@ -2,16 +2,6 @@ pipeline {
    agent any
 
 
-   tools {
-      go 'golang'
-   }
-   environment {
-       DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-       DOCKER_IMAGE = 'ephraimaudu/test-app'
-       GITHUB_CREDENTIALS = 'git-secret'
-       SONAR_TOKEN = credentials('SONAR_TOKEN')
-   }
-
 
    stages{
        stage('Checkout'){
