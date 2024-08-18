@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+      go 'golang'
+   }
+
     stages {
         stage('build image') {
             steps {
