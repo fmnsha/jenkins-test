@@ -3,7 +3,7 @@ pipeline {
    stages{
        stage('test'){
            steps{
-               echo "checking out repo"
+               sh "docker build -t jenk-test ."
                
            }
        }
