@@ -1,5 +1,7 @@
 pipeline {
-   agent "docker"
+   agent {
+    label:"docker"
+   }
    stages{
     stage('Build Go Application') {
             steps {
