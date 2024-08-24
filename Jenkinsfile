@@ -5,11 +5,11 @@ pipeline {
     tools {
         go 'go'
     }
-    environment {
-        GO114MODULE = 'on'
-        CGO_ENABLED = 0 
-        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
-    }
+    // environment {
+    //     GO114MODULE = 'on'
+    //     CGO_ENABLED = 0 
+    //     GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+    // }
 
     stages {
         // stage("unit-test") {
@@ -28,8 +28,8 @@ pipeline {
             steps {
                 echo 'BUILD EXECUTION STARTED'
                 sh 'go version'
-                sh 'go get ./...'
-                sh 'docker build . -t jenkins-test'
+                //sh 'go get ./...'
+                //sh 'docker build . -t jenkins-test'
             }
         }
         // stage('Docker Push') {
