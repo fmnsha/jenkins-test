@@ -1,12 +1,20 @@
 pipeline {
-   agent any
+   agent {
+        docker {
+            image "golang:alpine"
+        }
+    }
    stages{
-       stage('test'){
-           steps{
-               sh "docker build -t jenk-test ."
-               
-           }
-       }
+    stage('Build Go Application') {
+            steps {
+                sh 'go build -o main'
+            }
+        }
+       stage('Create Docker Image') {
+            steps {
+                sh 'docker build -t myapp:latest .'
+            }
+        }
        
    }
 
